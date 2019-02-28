@@ -11,6 +11,6 @@ RUN echo foo2 >> /tmp/bar
 FROM busybox:latest
 WORKDIR /
 COPY --from=modifier /tmp/bar /bin/baz
-COPY dir /var/dir
+#COPY dir /var/dir
 
 RUN echo /bin/baz
