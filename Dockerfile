@@ -1,9 +1,9 @@
-FROM golang:1.9 as builder
+FROM golang:1.9
 WORKDIR /tmp
 COPY . .
 RUN echo foo > /tmp/bar
 
-FROM busybox:latest as modifier
+FROM busybox:latest
 WORKDIR /tmp
 COPY --from=nginx:latest /etc/nginx/nginx.conf /nginx.conf
 RUN echo foo2 >> /tmp/bar
