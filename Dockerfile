@@ -10,6 +10,6 @@ RUN echo foo2 >> /tmp/bar1
 
 FROM busybox:latest
 WORKDIR /
-COPY --from=0 /tmp/bar1 /bin/baz
+COPY --from=0 /tmp/bar0 /bin/baz
 
 RUN echo /bin/baz
