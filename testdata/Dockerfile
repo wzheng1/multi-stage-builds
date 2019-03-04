@@ -8,7 +8,7 @@ WORKDIR /tmp
 ENV NAME value
 COPY --from=builder /tmp/bar0 /tmp/bar1
 RUN echo foo1 >> /tmp/bar1
-CMD ["ls" "/tmp/bar"]
+CMD ["ls" "/tmp/bar1"]
 
 FROM busybox:latest
 WORKDIR /
