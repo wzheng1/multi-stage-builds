@@ -5,11 +5,11 @@ RUN echo foo > /tmp/bar0
 
 FROM busybox:latest AS modifier
 WORKDIR /tmp
-COPY --from=123builder /tmp/bar0 /tmp/bar1
+COPY --from=builder /tmp/bar0 /tmp/bar1
 RUN echo foo2 >> /tmp/bar1
 
 FROM busybox:latest
 WORKDIR /
-COPY --from=123modifier /tmp/bar1 /bin/baz
+COPY --from=modifier /tmp/bar1 /bin/baz
 
 RUN echo /bin/baz
