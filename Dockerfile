@@ -6,7 +6,7 @@ RUN echo foo > /tmp/bar0
 FROM busybox:latest AS modifier
 WORKDIR /tmp
 COPY --from=builder /tmp/bar0 /tmp/bar1
-RUN echo foo2 >> /tmp/bar
+RUN echo foo2 >> /tmp/bar1
 
 FROM busybox:latest
 WORKDIR /
