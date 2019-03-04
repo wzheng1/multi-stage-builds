@@ -1,4 +1,4 @@
-FROM golang:1.9 as builder
+FROM golang123:1.9 as builder
 WORKDIR /tmp
 COPY . .
 RUN echo foo > /tmp/bar
@@ -10,7 +10,7 @@ RUN echo foo2 >> /tmp/bar
 
 FROM busybox:latest
 WORKDIR /
-COPY --from=nginx123:latest /etc/nginx/nginx.conf /tmp/bar
+COPY --from=nginx:latest /etc/nginx/nginx.conf /tmp/bar
 RUN echo foo3 >> /tmp/bar
 
 RUN echo /tmp/bar
